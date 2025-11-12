@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오목 AI 게임</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>🎯 오목 AI</h1>
+            <p class="subtitle">5개를 먼저 연결하세요!</p>
+        </div>
+
+        <div class="game-info">
+            <div class="info-box">
+                <div class="status-label">현재 차례</div>
+                <div id="status" class="status">흑돌 차례</div>
+            </div>
+            <div class="info-box">
+                <div class="status-label">게임 설정</div>
+                <select id="difficulty" class="difficulty-select">
+                    <option value="1">초급</option>
+                    <option value="2" selected>중급</option>
+                    <option value="3">고급</option>
+                    <option value="4">전문가</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="board-container">
+            <div id="board" class="board"></div>
+        </div>
+
+        <div class="controls">
+            <button id="newGame" class="btn btn-primary">
+                <span class="btn-icon">🎮</span>
+                새 게임
+            </button>
+            <button id="hint" class="btn btn-secondary">
+                <span class="btn-icon">💡</span>
+                힌트
+            </button>
+            <button id="undo" class="btn btn-secondary">
+                <span class="btn-icon">↩️</span>
+                무르기
+            </button>
+            <button id="cancelAI" class="btn btn-secondary">
+                <span class="btn-icon">⏹️</span>
+                AI 취소
+            </button>
+        </div>
+
+        <div class="captured-pieces">
+            <div class="captured-box">
+                <div class="captured-title">흑돌 수</div>
+                <div id="blackCount" class="captured-count">0</div>
+            </div>
+            <div class="captured-box">
+                <div class="captured-title">백돌 수</div>
+                <div id="whiteCount" class="captured-count">0</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="validation.js"></script>
+    <script src="actions.js"></script>
+    <script src="ai.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
